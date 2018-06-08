@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<link rel="stylesheet" href="css/chajian_style.css">
+	<link rel="stylesheet" href="css/img_show.css">
+	<style type="text/css">
+			.cd-primary-nav{
+				background: rgba(0, 0, 0, 0.8);
+				-webkit-backdrop-filter: blur(10px);
+                text-align: center;
+			}
+
+            .dp{
+                width: 200px;
+                padding: 20px;
+                color: white;
+                border:1px;
+            }
+            .dp:hover{
+                color: white;
+                cursor:pointer;
+                background: rgba(255, 255, 255, 0.1);
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                text-align: center;
+                border-radius: 5px;
+            }
+
+            .img_show{
+                width: 100px;
+                height: 100px;
+            }
+
+        a:hover{
+            color:#aaaaaa;
+        }
+        span1{
+            font-size: 0.7em;
+        }
+        span2{
+            color: white;
+        }
+		#box1{
+			position: fixed;
+			top: 51px;
+			right: 230px;
+			width: 120px;
+			height: 300px;
+			z-index: 3;
+			display: none;
+		}
+		#box1_ul{
+			margin-top: 30px;
+			height: 190px;
+			background: rgba(0, 0, 0, 0.3);
+			-webkit-backdrop-filter: blur(10px);
+		}
+		#box1_ul li{
+			float: right;
+			padding: 10px 0 10px 10px;
+			width: 100%;
+			text-align: left;
+		}
+			#container5{
+				text-align: center;
+				position: relative;
+				top: 200px;
+				width: 100%;
+				height: 150px;
+				background: rgba(0, 0, 0, 0.5);
+				-webkit-backdrop-filter: blur(10px);
+				color: white;
+			}
+
+			.indicator {
+				position: absolute;
+				top: 560px;
+				left: -25px;
+				margin-left: 50%;
+				width: 100px;
+				max-width: 100%;
+				height: 14px;
+				background-color: rgba(0,0,0,0.3);
+				z-index: 100;
+				border-radius: 10px;
+			}
+	</style>
+</head>
+<body style="margin: 0 auto;background-color:rgba(0,0,0,0.14)">
+	<header class="cd-header">
+		<div class="cd-logo"><a href="#0"><img src="img/logo/logo.png" alt="Logo" style="height: 50px"></a></div>
+
+		<nav>
+			<ul class="cd-secondary-nav">
+
+				<li  style="color: rgba(255,255,255,0.7);cursor: pointer" onmouseout="out_box1()" onclick="on_box1()"><span>欢迎您!</span>&nbsp;&nbsp;<span id="ajax_login"></span></li>
+				<li><a href="phone_derive.html">Home</a></li>
+			</ul>
+		</nav> <!-- cd-nav -->
+
+		<a class="cd-primary-nav-trigger" href="#0">
+			<span class="cd-menu-text">Menu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cd-menu-icon"></span>
+		</a> <!-- cd-primary-nav-trigger -->
+	</header>
+	<div class="demo-container">
+        <div class="slides">
+            <div class="slide slide-1">
+                <div class="bg bg-1">
+                    <div class="hint">Adversity does teach who your real friends are.</div>
+                </div>
+            </div>
+            <div class="slide slide-2">
+                <div class="bg bg-2">
+                    <div class="hint">To hold your hand To grow old with you.</div>
+                </div>
+            </div>
+            <div class="slide slide-3">
+                <div class="bg bg-3">
+                    <div class="hint">A smile is the most charming part of a person forever.</div>
+                </div>
+            </div>
+            <div class="slide slide-4">
+                <div class="bg bg-4">
+                    <div class="hint">Adversity does teach who your real friends are.</div>
+                </div>
+            </div>
+            <div class="slide slide-5">
+                <div class="bg bg-5">
+                    <div class="hint">永远期待美好的事情即将在这里发生.</div>
+                </div>
+            </div>
+
+        </div>
+
+		<div class="indicator">
+			<div where="1" class="dot dot-1" style="margin-left: 7px"></div>
+			<div where="2" class="dot dot-2" style="margin-left: 7px"></div>
+			<div where="3" class="dot dot-3" style="margin-left: 7px"></div>
+			<div where="4" class="dot dot-4" style="margin-left: 7px"></div>
+			<div where="5" class="dot dot-5" style="margin-left: 7px"></div>
+		</div>
+        <div class="property-hack"></div>
+    </div>
+	<nav class="cd-primary-nav">
+        <span2>༺๑全部产品预览๑༻</span2>
+
+        <table style="width: 100%;height: 50%;">
+            <tbody>
+            <tr>
+                <td style="width: 20%"></td>
+                <td class="dp" onclick="window.open('computer_derive.html','_blank');"><img src="img/logo/laptop.png" class="img_show"><br><span1>笔记本电脑</span1></td>
+                <td class="dp" onclick="window.open('phone_derive.html','_blank');"><img src="img/logo/Phone_logo.png" class="img_show"><br><span1>手机</span1></td>
+                <td class="dp" onclick="window.open('watch_derive.html','_blank');"><img src="img/logo/Watch.png" class="img_show"><br><span1>智能手表️</span1></td>
+				<td class="dp" onclick="window.open('hear_derive.html','_blank');"><img src="img/logo/erji.png" class="img_show"><br><span1>耳机️</span1></td>
+                <td style="width: 20%"></td>
+            </tr>
+            </tbody>
+        </table>
+
+
+	</nav>
+
+	</main>
+
+
+	<div class="htmleaf-container" style="height: 100%;padding-top: 100px">
+		<h1 style="text-align:center;font-weight: 300">热卖产品精选</h1>
+
+		<div class="wrap" >
+			<div class="tile" onclick="window.open('hear_derive.html','_blank');">
+				<img src="img/1.jpg"/>
+				<div class="text">
+					<h3>EP-250.</h3>
+					<h2 class="animate-text">享音乐之灵,如百鸟之凤.</h2>
+					<p class="animate-text">独创双“动圈”单元+“动铁”单元，将三个单元共同融入到同一个耳机中，双“动圈”的醇厚低音，
+                        让声音更加扎实稳重，石墨烯材料的加入，则让声音的细节更为丰富。“动铁”的高音透亮，稳定自然，感受三频均衡的本色声音。
+                        随着声音的流淌，仿佛置身自然，听见这些细节，让声音一开始就感动内心. </p>
+					<div class="dots">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="tile" onclick="window.open('phone_derive.html','_blank');">
+
+				<img src="img/2.jpg"/>
+				<div class="text">
+					<h3>PHONE.</h3>
+					<h2 class="animate-text">顶级旗舰机皇.</h2>
+					<p class="animate-text">首发高通骁龙835处理器，全新的“全视曲面屏”，2960x1440的分辨率通过屏幕上下各拓展的200行像素，
+                        将屏幕比例拓展为18.5:9，显示区域的增加使其更加匹配宽屏电影这样的多媒体内容，况且机身宽度基本不变在操作上也没有带来额外的压力。 </p>
+					<div class="dots">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="tile" onclick="window.open('computer_derive.html','_blank');">
+				<img src="img/3.jpg"/>
+				<div class="text">
+					<h3>XPS系列.</h3>
+					<h2 class="animate-text">极致的工业设计.</h2>
+					<p class="animate-text">它纤薄如刃，轻盈如羽，却又比以往速度更快、性能更强大。 它为你展现的，是迄今最明亮、最多彩的笔记本显示屏。
+						它更配备了触控栏，一个内置于键盘的玻璃面多点触控条，让你能在需要时快速取用各种工具。 XPS系列是对我们突破性理念的一场出色演绎，
+						而它，也正期待着演绎你的奇思妙想。</p>
+					<div class="dots">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+<div id="box1" onmouseout="out_box1()" onmouseover="on_box1()">
+	<ul id="box1_ul">
+		<li><i class="glyphicon glyphicon-shopping-cart" style="color: white;top: 2px">&nbsp</i><a href="car_index.html">购物车</a></li>
+		<li><i class="glyphicon glyphicon-ok" style="color: white;top: 2px"></i>&nbsp&nbsp<a href="person.html">我的订单</a></li>
+		<li><i class="glyphicon glyphicon-heart-empty" style="color: white;top: 2px"></i>&nbsp&nbsp<a href="person.html">我的收藏</a></li>
+		<li><i class="glyphicon glyphicon-user" style="color: white;top: 2px"></i>&nbsp&nbsp<a href="person.html">个人中心</a></li>
+		<li><i class="glyphicon glyphicon-refresh" style="color: white;top: 2px"></i>&nbsp&nbsp<a href="php/user_logout.php">账号注销</a></li>
+
+	</ul>
+</div>
+
+	<div class="htmleaf-container" >
+		<div class="tabs" style="background-color: rgba(0,0,0,0.1)">
+			<input type="radio" id="tab1" name="tab-control" checked>
+			<input type="radio" id="tab2" name="tab-control">
+			<input type="radio" id="tab3" name="tab-control">
+			<input type="radio" id="tab4" name="tab-control">
+			<ul>
+				<li title="Formerly"><label for="tab1" role="button"><svg viewBox="0 0 24 24"><path d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10H20C20,13.32 17.32,16 14,16A6,6 0 0,1 8,10A6,6 0 0,1 14,4C14.43,4 14.86,4.05 15.27,4.14L16.88,2.54C15.96,2.18 15,2 14,2M20.59,3.58L14,10.17L11.62,7.79L10.21,9.21L14,13L22,5M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82Z"/>
+				</svg><br><span>发展历程</span></label></li>
+				<li title="The moment"><label for="tab2" role="button"><svg viewBox="0 0 24 24"><path d="M2,10.96C1.5,10.68 1.35,10.07 1.63,9.59L3.13,7C3.24,6.8 3.41,6.66 3.6,6.58L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.66,6.72 20.82,6.88 20.91,7.08L22.36,9.6C22.64,10.08 22.47,10.69 22,10.96L21,11.54V16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V10.96C2.7,11.13 2.32,11.14 2,10.96M12,4.15V4.15L12,10.85V10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V12.69L14,15.59C13.67,15.77 13.3,15.76 13,15.6V19.29L19,15.91M13.85,13.36L20.13,9.73L19.55,8.72L13.27,12.35L13.85,13.36Z" />
+				</svg><br><span>核心人员构成</span></label></li>
+				<li title="Future"><label for="tab3" role="button"><svg viewBox="0 0 24 24">
+					<path d="M3,4A2,2 0 0,0 1,6V17H3A3,3 0 0,0 6,20A3,3 0 0,0 9,17H15A3,3 0 0,0 18,20A3,3 0 0,0 21,17H23V12L20,8H17V4M10,6L14,10L10,14V11H4V9H10M17,9.5H19.5L21.47,12H17M6,15.5A1.5,1.5 0 0,1 7.5,17A1.5,1.5 0 0,1 6,18.5A1.5,1.5 0 0,1 4.5,17A1.5,1.5 0 0,1 6,15.5M18,15.5A1.5,1.5 0 0,1 19.5,17A1.5,1.5 0 0,1 18,18.5A1.5,1.5 0 0,1 16.5,17A1.5,1.5 0 0,1 18,15.5Z" />
+				</svg><br><span>公司文化</span></label></li>
+				<li title="Obsession"><label for="tab4" role="button"><svg viewBox="0 0 24 24">
+				<path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+			</svg><br><span>加入我们</span></label></li>
+			</ul>
+
+			<div class="content">
+				<section><h2>发展历程</h2>
+					<div class="demo">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="main-timeline">
+										<div class="timeline">
+											<div class="timeline-content">
+	                                <span class="date">
+	                                    <span class="day">10<sup>日</sup></span>
+	                                    <span class="month">4月</span>
+	                                    <span class="year">2017</span>
+	                                </span>
+												<h1 class="title">正式成立</h1>
+												<p class="description">叮当公司正式成立，并入驻上海。</p>
+											</div>
+										</div>
+
+										<div class="timeline">
+											<div class="timeline-content">
+	                                <span class="date">
+	                                    <span class="day">12<sup>日</sup></span>
+	                                    <span class="month">6月</span>
+	                                    <span class="year">2017</span>
+	                                </span>
+												<h1 class="title">产品发布</h1>
+												<p class="description">创始团队正式亮相，宣布进军手机市场，
+																		揭秘旗下4款产品：智能DingdangPhoneX系列、智能手表DDwatch系列、
+																		笔记本电脑XPS系列、头戴式solo耳机系列。</p>
+											</div>
+										</div>
+
+										<div class="timeline">
+											<div class="timeline-content">
+	                                <span class="date">
+	                                    <span class="day">14<sup>日</sup></span>
+	                                    <span class="month">12</span>
+	                                    <span class="year">2017</span>
+	                                </span>
+												<h1 class="title">首页上线</h1>
+												<p class="description">叮当网主页上线，新零售开启新征程，并且，
+													与沃达丰签署《全球框架协议》，正式成为沃达丰优选通信设备供应商。</p>
+											</div>
+										</div>
+
+										<div class="timeline">
+											<div class="timeline-content">
+	                                <span class="date">
+	                                    <span class="day">1<sup>日</sup></span>
+	                                    <span class="month">3月</span>
+	                                    <span class="year">2018</span>
+	                                </span>
+												<h1 class="title">快速发展</h1>
+												<p class="description">以消费者为中心，以行践言(Make it Possible)持续聚焦精品战略，
+													其中旗舰机型DingdangPhoneX3实现了品牌利润双赢，智能手机业务获得历史性突破，
+													叮当手机品牌知名度全球同比增长110%。
+												</p>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>人员构成</h2>
+					<div class="demo">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-3 col-sm-6">
+									<div class="our-team">
+										<img src="img/img-1.jpg" alt=""/>
+										<div class="team-content">
+											<h3 class="title">童</h3>
+											<span class="post">CEO</span>
+											<ul class="social-links">
+												<li><a href="#"><i class="fa fa-facebook"></i> </a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i> </a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i> </a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+												<li><a href="#"><i class="fa fa-pinterest-p"></i> </a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-3 col-sm-6">
+									<div class="our-team">
+										<img src="img/img-2.jpg" alt=""/>
+										<div class="team-content">
+											<h3 class="title">宏</h3>
+											<span class="post">COO</span>
+											<ul class="social-links">
+												<li><a href="#"><i class="fa fa-facebook"></i> </a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i> </a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i> </a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+												<li><a href="#"><i class="fa fa-pinterest-p"></i> </a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-3 col-sm-6">
+									<div class="our-team">
+										<img src="img/img-3.jpg" alt=""/>
+										<div class="team-content">
+											<h3 class="title">祥</h3>
+											<span class="post">CFO</span>
+											<ul class="social-links">
+												<li><a href="#"><i class="fa fa-facebook"></i> </a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i> </a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i> </a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+												<li><a href="#"><i class="fa fa-pinterest-p"></i> </a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-3 col-sm-6">
+									<div class="our-team">
+										<img src="img/img-4.jpg" alt=""/>
+										<div class="team-content">
+											<h3 class="title">作</h3>
+											<span class="post">HRO</span>
+											<ul class="social-links">
+												<li><a href="#"><i class="fa fa-facebook"></i> </a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i> </a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i> </a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+												<li><a href="#"><i class="fa fa-pinterest-p"></i> </a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</section>
+				<section>
+					<h2>未来</h2>
+					<div class="cont s--inactive">
+						<!-- cont inner start -->
+						<div class="cont__inner">
+							<!-- el start -->
+							<div class="el">
+								<div class="el__overflow">
+									<div class="el__inner">
+										<div class="el__bg"></div>
+										<div class="el__preview-cont">
+											<h2 class="el__heading">Section 1</h2>
+										</div>
+										<div class="el__content">
+											<div class="el__text">公司走廊</div>
+											<div class="el__close-btn"></div>
+										</div>
+									</div>
+								</div>
+								<div class="el__index">
+									<div class="el__index-back">1</div>
+									<div class="el__index-front">
+										<div class="el__index-overlay" data-index="1">1</div>
+									</div>
+								</div>
+							</div>
+							<!-- el end -->
+							<!-- el start -->
+							<div class="el">
+								<div class="el__overflow">
+									<div class="el__inner">
+										<div class="el__bg"></div>
+										<div class="el__preview-cont">
+											<h2 class="el__heading">Section 2</h2>
+										</div>
+										<div class="el__content">
+											<div class="el__text">开放办公区</div>
+											<div class="el__close-btn"></div>
+										</div>
+									</div>
+								</div>
+								<div class="el__index">
+									<div class="el__index-back">2</div>
+									<div class="el__index-front">
+										<div class="el__index-overlay" data-index="2">2</div>
+									</div>
+								</div>
+							</div>
+							<!-- el end -->
+							<!-- el start -->
+							<div class="el">
+								<div class="el__overflow">
+									<div class="el__inner">
+										<div class="el__bg"></div>
+										<div class="el__preview-cont">
+											<h2 class="el__heading">Section 3</h2>
+										</div>
+										<div class="el__content">
+											<div class="el__text">开放会议室</div>
+											<div class="el__close-btn"></div>
+										</div>
+									</div>
+								</div>
+								<div class="el__index">
+									<div class="el__index-back">3</div>
+									<div class="el__index-front">
+										<div class="el__index-overlay" data-index="3">3</div>
+									</div>
+								</div>
+							</div>
+							<!-- el end -->
+							<!-- el start -->
+							<div class="el">
+								<div class="el__overflow">
+									<div class="el__inner">
+										<div class="el__bg"></div>
+										<div class="el__preview-cont">
+											<h2 class="el__heading">Section 4</h2>
+										</div>
+										<div class="el__content">
+											<div class="el__text">前台</div>
+											<div class="el__close-btn"></div>
+										</div>
+									</div>
+								</div>
+								<div class="el__index">
+									<div class="el__index-back">4</div>
+									<div class="el__index-front">
+										<div class="el__index-overlay" data-index="4">4</div>
+									</div>
+								</div>
+							</div>
+							<!-- el end -->
+							<!-- el start -->
+							<div class="el">
+								<div class="el__overflow">
+									<div class="el__inner">
+										<div class="el__bg"></div>
+										<div class="el__preview-cont">
+											<h2 class="el__heading">Section 5</h2>
+										</div>
+										<div class="el__content">
+											<div class="el__text">休息区</div>
+											<div class="el__close-btn"></div>
+										</div>
+									</div>
+								</div>
+								<div class="el__index">
+									<div class="el__index-back">5</div>
+									<div class="el__index-front">
+										<div class="el__index-overlay" data-index="5">5</div>
+									</div>
+								</div>
+							</div>
+							<!-- el end -->
+						</div>
+						<!-- cont inner end -->
+					</div>
+
+				</section>
+				<section>
+					<h2>招聘</h2>
+					招募职位:<br>
+					1️前端工程师<br>
+					要求:3年以上工作经验，精通HTML+CSS，熟练掌握JS，熟悉bootstrap优先考虑。
+					<br>
+					2 前台<br>
+					要求:女生，有相关工资经验，会一些办公软件，吃苦耐闹，有韧性，有相关工作经验优先考虑。
+				</section>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="container5">
+
+		<div style="position: relative;top: 50px;height: 100px;width: 100%">
+
+			<p class="p_bottom">关于叮当&nbsp|&nbsp dingdang &nbsp|&nbsp服务条款&nbsp|&nbsp广告服务&nbsp|&nbsp客服中心&nbsp|&nbsp网站导航</p>
+			<p class="p_bottom">Copyright © 1998 - 20180327 diangdang. All Rights Reserved.</p>
+			<p class="p_bottom">叮当公司 版权所有 叮当网络文化经营许可证</p>
+		</div>
+	</div>
+
+</body>
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+<script src="js/progresscircle.js"></script>
+<script src="js/stopExecutionOnTimeout.js"></script>
+<script type="text/javascript">
+    var $cont = document.querySelector('.cont');
+    var $elsArr = [].slice.call(document.querySelectorAll('.el'));
+    var $closeBtnsArr = [].slice.call(document.querySelectorAll('.el__close-btn'));
+    setTimeout(function () {
+        $cont.classList.remove('s--inactive');
+    }, 200);
+    $elsArr.forEach(function ($el) {
+        $el.addEventListener('click', function () {
+            if (this.classList.contains('s--active'))
+                return;
+            $cont.classList.add('s--el-active');
+            this.classList.add('s--active');
+        });
+        $el.addEventListener('keypress', function (e) {
+            if (this.classList.contains('s--active'))
+                return;
+            if (e.which !== 13)
+                return;
+            $cont.classList.add('s--el-active');
+            this.classList.add('s--active');
+        });
+    });
+    $closeBtnsArr.forEach(function ($btn) {
+        $btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            $cont.classList.remove('s--el-active');
+            document.querySelector('.el.s--active').classList.remove('s--active');
+        });
+        $btn.addEventListener('keypress', function (e) {
+            if (e.which !== 13)
+                return;
+            e.stopPropagation();
+            $cont.classList.remove('s--el-active');
+            document.querySelector('.el.s--active').classList.remove('s--active');
+        });
+    });
+</script>
+<script type="text/javascript">
+  	function on_box1() {
+		document.getElementById("box1").style.display="inline";
+	}
+    function out_box1() {
+        document.getElementById("box1").style.display="none";
+    }
+
+    $('#ajax_login').load('php/ajaxlogin.php?a='+Math.random());
+
+
+   /* $('.container').on("click",".a_ll",function (e) {/!*动态绑定刷新数据事件*!/
+        var c=$(e.target).attr('id');
+        $.ajax({
+            url: "add_look_num.php",
+            type: "POST",
+            data: {name3: c}
+        });
+    });*/
+</script>
+</body>
+</html>

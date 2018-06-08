@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息修改</title>
+    <link rel="stylesheet"  href="css/pignose.tab.min.css">
+    <link rel="stylesheet"  href="css/pignose.tab.min.css">
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker3.css">
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <style type="text/css">
+        #pg{
+            position: relative;
+            margin-top: 10px;
+        }
+        #container{
+            position:absolute;
+            width: 900px;
+            margin-left: 50%;
+            left: -450px;
+            height: 100%;
+
+        }
+
+        .page1_1{
+            position:absolute;background-color: white;height: 480px;border-radius: 20px
+        }
+        .bt{
+            border-radius: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body style="background-color: rgba(0,0,0,0.05)">
+<div id="container">
+   <h2>当前账号： <span id="ajax_login"></span></h2>
+<div class="page" id="pg">
+        <div class="tab pignose-tab-response tab"style="text-align: center">
+            <ul style="width: 100%">
+                <li style="width: 33%">
+                    <a href="#" class="bt">密码修改</a>
+                    <div class="page1_1">
+                      <form method="post" action="php/password_update.php">
+                        <label>旧密码：</label><input type="password" name="old_pass"><br>
+                          <label>新密码：</label><input type="password" name="new_pass1"><br>
+                          <label>请重复：</label><input type="password" name="new_pass2">
+                          <input type="submit" name="submit" value="提交">
+                    </form>
+
+                    </div>
+
+                </li>
+                <li style="width: 33%">
+                    <a href="#" class="bt">企业用户认证</a>
+
+                    <div class="page1_1">
+                        <form method="post" action="php/com_evaluation.php" name="myForm" enctype="multipart/form-data">
+                        <label>企业名称：</label><input type="text" id="com_name" name="com_name"><br>
+                        <label>企业电话：</label><input type="tel" id="com_tel" name="com_tel"><br>
+                        <label>企业邮箱：</label><input type="email" id="com_email" name="com_email"><br>
+                        <label>营业执照：</label><input type="file" id="file" name="file" style="border: none;width: 180px">
+                        <input type="submit" id="submit" name="submit" value="提交">
+                        </form><br>
+                        <!--<span>预览</span>
+                        <div id="img_1"></div>-->
+                    </div>
+
+                </li>
+
+                <li style="width: 33%">
+                    <a href="#" id="userdes" class="bt">信息完善</a>
+                    <div id="page1_1" class="page1_1">
+
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="js/ggtooltip.js"></script>
+<script type="text/javascript" src="js/pignose.tab.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#ajax_login').load('php/ajaxlogin.php?a='+Math.random());
+        $('.tab').pignoseTab({//选项卡
+            animation: true,
+            children: '.tab'
+        });
+
+
+    });
+
+    window.onload=function () {
+        $("#page1_1").load("php/userdes_update.php");
+    }
+
+
+</script>
+</body>
+</html>

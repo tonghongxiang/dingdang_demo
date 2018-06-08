@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论区制作</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<style type="text/css">
+    .icon-picture:hover{
+        color: #00b4ef;
+    }
+    .addBtn{
+        position: absolute;
+        top: -10000px;
+    }
+</style>
+</head>
+<body>
+    <div id="box">
+        <form method="post" action="php/add_pinglun.php" name="myForm" enctype="multipart/form-data">
+        <div id="show_container" style="position: relative;width: 900px;height:200px;margin-left: 50%;left: -450px">
+            <input type="text" name="title" placeholder="主题">
+            <textarea type="text" style="width: 100%;height: 150px" name="content" placeholder="内容"></textarea>
+            <div id="picInput" style="overflow: hidden;margin-top: 30px">
+                上传图片：
+                <label for="1"  style="font-size: 3.0em;color: rgba(0,0,0,0.3)"><i  class="icon-picture" id="p1" style="display: inline"></i><img src="" id="show1" style=" height: 120px;width: auto;margin-left:10px;border-radius: 10px"></label>
+                <label for="2"  style="font-size: 3.0em;color: rgba(0,0,0,0.3)"><i  class="icon-picture" id="p2" style="display: none"></i><img src="" id="show2" style=" height: 120px;width: auto;margin-left:10px;border-radius: 10px"></label>
+                <label for="3"  style="font-size: 3.0em;color: rgba(0,0,0,0.3)"><i  class="icon-picture" id="p3" style="display: none"></i><img src="" id="show3" style=" height: 120px;width: auto;margin-left:10px;border-radius: 10px"></label>
+                <input class="addBtn" id="1"  type="file" name='myfile[0]'  onchange="c()" onclick="hidden1()">
+                <input class="addBtn" id="2"  type="file" name='myfile[1]' onchange="b()" onclick="hidden2()">
+                <input class="addBtn" id="3"  type="file" name='myfile[2]' onchange="d()" onclick="hidden3()">
+            </div>
+                <br/><br/>
+            <input id="tj" type="submit" name="submit">
+        </div>
+        </form>
+    </div>
+    <div id="container1"></div>
+    <script type="text/javascript" src="./js/jquery-2.1.0.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+    <script>
+
+        var param1= $.cookie("pro_id");
+        var param2= $.cookie("ord_id");
+        console.log(param1,param2);
+
+        function c () {
+            var r= new FileReader();
+            f=document.getElementById('1').files[0];
+
+            r.readAsDataURL(f);
+            r.onload=function (e) {
+                document.getElementById('show1').src=this.result;
+            };
+        }
+        function b () {
+            var r= new FileReader();
+            f=document.getElementById('2').files[0];
+
+            r.readAsDataURL(f);
+            r.onload=function (e) {
+                document.getElementById('show2').src=this.result;
+            };
+        }
+        function d () {
+            var r= new FileReader();
+            f=document.getElementById('3').files[0];
+
+            r.readAsDataURL(f);
+            r.onload=function (e) {
+                document.getElementById('show3').src=this.result;
+            };
+        }
+
+        function hidden1 () {
+            document.getElementById("p1").style.display="none";
+            document.getElementById("p2").style.display="inline";
+            document.getElementById("p3").style.display="none";
+        }
+        function hidden2 () {
+            document.getElementById("p1").style.display="none";
+            document.getElementById("p2").style.display="none";
+            document.getElementById("p3").style.display="inline";
+        }
+        function hidden3 () {
+            document.getElementById("p1").style.display="none";
+            document.getElementById("p2").style.display="none";
+            document.getElementById("p3").style.display="none";
+        }
+
+
+
+    </script>
+</body>
+</html>

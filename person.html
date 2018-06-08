@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>用户中心</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <style type="text/css">
+
+        #user_img{
+            width: 100px;
+            margin-top: 40px;
+            border:1px dashed;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            background-color: rgba(0,0,0,0.03);
+        }
+        .icon{
+            font-size: 3em;
+            color: #00b4ef;
+        }
+
+        #box1{
+            text-align: center;
+            position: fixed;
+            width: 250px;
+            height: 100%;
+            overflow: auto;
+            background-color: white;
+        }
+        #p1{
+            height: 50px;
+        }
+        #container3{
+             position: fixed;
+           left: 270px;
+            margin: 0 auto;
+             width: 75%;
+             height: 100%;
+            background-color: white;
+            display: none;
+         }
+
+        .container_son{
+            position: relative;
+            height: 50%;
+            width: 100%;
+            overflow: auto;
+        }
+
+        #container3_1{
+            position: fixed;
+            left: 270px;
+            margin: 0 auto;
+            width: 75%;
+            height: 100%;
+            background-color: white;
+            display: inline;
+        }
+        #container3_2{
+            position: relative;
+        }
+
+        table{
+            width: 600px;
+        }
+        table tr{
+            border: none;
+            padding: 5px;
+        }
+        /*table tr:nth-child(odd){
+            background:#f5f5f5 ;
+        }
+        tr td{
+            border: none;
+            padding: 5px;
+        }*/
+        .user_spanall{
+            text-decoration: none;
+            color: black;
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+
+        .user_span{
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 20px;
+            color: rgba(0,0,0,0.59);
+        }
+        .user_span:hover{
+            color: red;
+        }
+
+        .tb1{
+            width: 100%;
+            text-align: center;
+        }
+        .tb1 tr{
+
+        }
+        .tb1 tr:nth-child(odd){
+            background: rgba(0, 0, 0, .1);
+            -webkit-backdrop-filter: blur(10px);
+
+        }
+
+        .tb1 tr td{
+            border: none;
+            padding: 5px;
+            color: black;
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .img_show:hover{
+            transform: scale(4);
+        }
+    </style>
+</head>
+<body style="text-align: center;margin:0;background-color: rgba(0,0,0,0.03)">
+<div id="box1">
+    <img id="user_img" src="img/custommovie.png"><br>
+    <span id="ajax_login" style="color: rgba(0,0,0,0.25);cursor: pointer"></span><br><br><br>
+    <span  id="span1" class="user_spanall">订单中心</span><br><br>
+        <span  id="span1_1" class="user_span">普通订单</span><br><br>
+        <span  id="span1_2" class="user_span">企业订单</span><br><br><br>
+        <span class="fa fa-camera-retro" style="color: black"></span>
+
+
+
+        <span  id="span2" class="user_spanall" >个人中心</span><br><br>
+        <span  id="span2_1" class="user_span">个人信息</span><br><br>
+        <span  id="span2_2" class="user_span" onclick="window.open('person_update.html','_blank')">修改密码</span><br><br>
+        <span  id="span_3" class="user_span" onclick="window.open('person_update.html','_blank')">企业用户认证</span><br><br><br>
+    </div>
+
+</div>
+<div id="container3">
+    <div id="container2" class="container_son" >
+
+    </div>
+    <div id="container4" class="container_son">
+
+    </div>
+</div>
+<div id="container3_1">
+    <div id="container3_2" class="container_son" ></div>
+    <div id="container3_3" class="container_son"></div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+
+    window.onload=function () {
+        $("#container3_3").load("php/person_order3.php");
+        $("#container3_2").load("php/person_order1.php");
+    };
+
+
+    $('#ajax_login').load('php/ajaxlogin.php?a='+Math.random());
+
+    $(function () {  /*动态显示点击的分类下的所有*/
+        $("#span1_1").click(function () {
+            document.getElementById("container3").style.display="inline";
+            document.getElementById("container3_1").style.display="none";
+            $("#container2").load("php/person_order2.php");/*传递参数a给后台Php文件order_descpt.php，最后返回数据填入id为container2的div中*/
+        });
+        $("#span1_2").click(function () {
+            document.getElementById("container3").style.display="inline";
+            document.getElementById("container3_1").style.display="none";
+            $("#container2").load("php/person_order2_2.php");/*传递参数a给后台Php文件order_descpt.php，最后返回数据填入id为container2的div中*/
+        });
+
+        $("#span2_1").click(function () {
+            document.getElementById("container3").style.display="none";
+            document.getElementById("container3_1").style.display="inline";
+            $("#container3_3").load("php/person_order3.php");
+            $("#container3_2").load("php/person_order1.php");
+        });
+
+        $('#container2').on("click",".icon-search",function () {/*动态绑定刷新数据事件*/
+            var c = $(this).attr('id');
+
+            $("#container4").load("php/用户_订单详情.php",{order_id:c});
+        });
+
+        $('#container2').on("click","#go_pay",function () {/*动态绑定刷新数据事件*/
+            var d=$(this).attr('name');
+            $(".modal-header").load("php/pay.php",{name1:d});
+        });
+
+        $('.modal-header').on("click","#queren_pay",function () {/*动态绑定刷新数据事件*/
+            var b=$(this).attr('name');
+            $("#container2").load("php/person_order2.php");
+            $(".modal-header").load("php/pay_confirm.php",{name2:b});
+            $("#container2").load("php/person_order2.php");
+
+
+        });
+        $('.modal-header').on("click","#queren_pay1",function () {/*动态绑定刷新数据事件*/
+            var b=$(this).attr('name');
+            $("#container2").load("php/person_order2.php");
+        });
+
+
+        $('#container2').on("click","#go_confirm",function () {/*动态绑定刷新数据事件*/
+            var e=$(this).attr('name');
+            $("#container2").load("php/person_order2.php");
+            $(".modal-header").load("php/arrive_confirm",{name3:e});
+
+        });
+
+        $('#container4').on("click","#go_pinglun",function () {/*动态绑定刷新数据事件*/
+            var e=$(this).attr('name');
+            var qq=document.getElementById("go_pinglun").className;
+            $.cookie("pro_id",e);
+            $.cookie("ord_id",qq);
+            window.open('pinglun.html');
+        });
+
+
+
+    });
+
+
+
+
+
+</script>
+
+</body>
+</html>

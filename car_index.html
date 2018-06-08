@@ -1,0 +1,100 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js" ></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style type="text/css">
+        table{
+            width: 100%;
+            text-align: center;
+        }
+        tr td{
+            border: none;
+            padding: 5px;
+            color: black;
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        #container10{
+            width: 760px;
+            position: relative;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, .5);
+            -webkit-backdrop-filter: blur(10px);
+
+
+        }
+        .dt{
+            text-decoration: none;
+        }
+        .dt:hover{
+            text-decoration: none;
+            color: white;
+        }
+        #submit{
+            position: relative;
+            text-decoration: none;
+
+        }
+        #submit:hover{
+            color: white;
+        }
+        .img_show{
+            z-index: 20;
+        }
+        .img_show:hover{
+            transform: scale(4);
+
+        }
+    </style>
+</head>
+<body style="background: url(img/log_bg.jpg) no-repeat center center fixed;background-size: cover;text-align: center">
+
+<div id="container8">
+    <div id="container10"></div>
+</div>
+
+<div id="container11"></div>
+
+<script type="text/javascript">
+    window.onload=function () {
+    $("#container10").load("php/car_index.php");
+    };
+    $('#container10').on("click",".dt",function () {/*动态绑定刷新数据事件*/
+        var c=$(this).attr('id');
+        $.ajax({
+            url: "php/car_delete.php",
+            type: "POST",
+            data: {name3: c}
+        });
+    });
+    $('#container10').on("click","#submit",function () {/*动态绑定刷新数据事件*/
+        var a=document.getElementById("he_ji").innerHTML;
+        $("#container10").load("php/add_order.php",{td:a});
+       /* $.ajax({
+            url: "php/add_order.php",
+            type: "POST",
+            data: {td:a}
+        });*/
+
+
+    });
+    $('#container10').bind("keyup",".update_car",function (e) {/*动态绑定刷新数据事件*/
+        if (e.keyCode == "13") {
+            var m = $(e.target).attr('id');
+            var n = $("#"+m).val();
+
+            $.ajax({
+                url: "php/car_ct.php",
+                type: "POST",
+                data: {name6:m,name4:n}
+            });
+            location.reload();
+        }
+    });
+</script>
+</body>
+</html>
+

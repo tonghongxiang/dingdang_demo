@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/phone_derive.css">
+    <script src="js/modernizr.js"></script>
+    <style type="text/css">
+        #container1{
+            position: fixed;
+            top: -300px;
+            height:300px;
+            width: 500px;
+            margin-left: -250px;
+            left: 50%;
+            background: rgba(0, 0, 0, 0.7);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 10;
+            border-radius: 10px;
+            text-align: center;
+            display: block;
+        }
+        .car_button{
+            height: 30px;
+            width: 70px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: rgba(255,255,255,0.23);
+            border: 0;
+            border-radius: 5px;
+            margin:20px 40px 0 40px;
+
+
+        }
+        .car_button:hover{
+            background-color: rgba(0,0,0,0.53);
+        }
+        #car_back{
+        }
+        #car_go{
+
+        }
+        .no1{
+            font-size: 1.3em;
+            color: white;
+            font-family: "Al Tarikh";
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .img_show{
+            position: relative;
+            top: 70px;
+            left: -80px;
+            width: 290px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<header class="cd-header">
+    <div id="cd-logo"><img src="img/logo/logo.png" alt="Logo"></div>
+    <div id="cd-action"><a id="phone" href="pinglun_show.php" name="xps" class="btn">查看评价</a></div>
+</header>
+
+<main class="cd-main-content">
+    <div class="cd-product-intro" align="center">
+        <h1>一身才华，一触，即发。</h1>
+        <p>
+            它纤薄如刃，轻盈如羽，却又比以往速度更快、性能更强大。
+            它为你展现的，是迄今最明亮、最多彩的笔记本显示屏。
+            它更配备了触控栏，一个内置于键盘的玻璃面多点触控条，让你能在需要时快速取用各种工具。
+            XPS系列是对我们突破性理念的一场出色演绎，而它，也正期待着演绎你的奇思妙想。</p>
+
+
+
+        <div class="cd-triggers">
+            <a href="index.html" class="btn">返回主页</a>
+            <a href="#cd-product-tour" class="btn salmon" data-type="cd-tour">去选购</a>
+        </div>
+    </div> <!-- cd-product-intro -->
+
+    <div id="cd-product-tour">
+        <ul>
+            <li class="cd-single-item cd-active">
+                <div class="cd-caption">
+                    <h2>XPS 13.3</h2>
+                    <p>屏幕: 13.3英寸
+                        500 尼特
+                        视网膜显示屏<br>
+                        CPU: Turbo Boost
+                        最高可达 4.1GHz<br>
+                        GPU:  Intel HD Graphics 6000 图形处理器<br>
+                        存储: RAM容量 8GB  ROM容量 256GB<br><br>
+                        <sapn>售价：<h style="color: red">7999</h> 元</sapn>
+                    </p>
+
+                    <button class="love" id="love1" type="submit">收藏</button>
+                    <button class="add_car" id="xps13.3" type="submit">加入购物车</button>
+
+                </div>
+                <div class="img_show"><img src="img/computer.png"></div>
+            </li>
+            <li class="cd-single-item cd-not-visible cd-move-right">
+                <div class="cd-caption">
+                    <h2>XPS 15.6</h2>
+                    <p>屏幕: 15.6英寸
+                        500 尼特
+                        视网膜显示屏<br>
+                        CPU: Turbo Boost
+                        最高可达 4.1GHz<br>
+                        GPU:  Intel HD Graphics 6000 图形处理器<br>
+                        存储: RAM容量 8GB  ROM容量 256GB<br><br>
+                        <sapn>售价：<h style="color: red">8999</h> 元</sapn>
+                    </p>
+                    <button class="love" id="love2">收藏</button>
+                    <button class="add_car" id="xps15.6" type="submit">加入购物车</button>
+
+                </div>
+                <div class="img_show"><img src="img/computer.png"></div>
+            </li>
+            <li class="cd-single-item cd-not-visible cd-move-right">
+                <div class="cd-caption">
+                    <h2>XPS 19</h2>
+                    <p>屏幕: 19英寸 500 尼特 视网膜显示屏<br>
+                        CPU: Turbo Boost
+                        最高可达 4.1GHz<br>
+                        GPU:  Intel HD Graphics 6000 图形处理器<br>
+                        存储: RAM容量 8GB  ROM容量 256GB<br><br>
+                        <sapn>售价：<h style="color: red">10999</h> 元</sapn>
+                    </p>
+                    <button class="love" id="love3" type="submit">收藏</button>
+                    <button class="add_car" id="xps19" >加入购物车</button>
+                </div>
+                <div class="img_show"><img src="img/computer.png"></div>
+            </li>
+        </ul>
+    </div> <!-- cd-product-tour -->
+
+    <div class="cd-slider-nav">
+        <a class="cd-prev" href="#0">Previous</a>
+        <a class="cd-next" href="#0">Next</a>
+    </div> <!-- cd-slider-nav -->
+
+    <div class="cd-loader"></div> <!-- top loading bar -->
+</main>
+<div  id="container1">
+    <div id="container"></div>
+    <button class='car_button' id='car_back'>关闭</button ><button class='car_button' id='car_go'  onclick="window.open('car_index.html','_blank')">去结算</button>
+</div>
+
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/phone_derive.js"></script> <!-- Resource jQuery -->
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $("#btn_color1").click(function () {
+            var x=document.getElementsByClassName("cd-phone-frame");
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.borderColor="rgba(0,0,0,1)";
+            }
+
+        });
+        $("#btn_color2").click(function () {
+            var x = document.getElementsByClassName("cd-phone-frame");
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.borderColor = "rgba(240,255,240,1)";
+            }
+
+        });
+        $("#btn_color3").click(function () {
+            var x = document.getElementsByClassName("cd-phone-frame");
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.borderColor = "rgba(87,250,255,1)";
+            }
+
+        });
+    });
+
+    $(function () {
+        $(".add_car").click(function () {
+            document.getElementById("container1").style.top="100px";
+            var a=$(this).attr('id');/*获取点击事件的ID*/
+            $("#container").load("php/add_hear.php",{name1: a})/*传递参数a给后台Php文件add_car.php，最后返回数据填入id为#container的div中*/
+        });
+
+        $(".car_button").click(function () {
+            document.getElementById("container1").style.top="-300px";
+        });
+
+        $("#car_go").click(function () {
+
+
+            $.ajax({
+                url: "php/car_index.php",
+                type: "POST",
+                data: {name5:f}
+            });
+        });
+
+        $('.container').on("click","#search_input",function (e) {/*动态绑定刷新数据事件*/
+            var c=$(e.target).attr('id');
+            $.ajax({
+                url: "add_look_num.php",
+                type: "POST",
+                data: {name3: c}
+            });
+        });
+
+        $("#phone").click(function () {
+            var p=$(this).attr('name');
+            $.cookie("pro_type",p);
+        });
+
+
+    });
+
+
+    /* $('.container').on("click",".car_button",function (e) {/!*动态绑定刷新数据事件*!/
+         var f=$(e.target).attr('id');
+         alert(f);
+     });*/
+
+
+</script>
+</body>
+</html>

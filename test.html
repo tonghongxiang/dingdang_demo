@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+        #container_home {
+            min-width: 320px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="./js/jquery-2.1.0.min.js"></script>
+<script src="./code/highcharts.js"></script>
+<script src="./code/highcharts-more.js"></script>
+<script src="./code/modules/exporting.js"></script>
+
+<div id="container_home"></div>
+<button id="plain">Plain</button>
+<button id="inverted">Inverted</button>
+<button id="polar">Polar</button>
+
+
+<script type="text/javascript">
+
+    var chart = Highcharts.chart('container_home', {
+
+        title: {
+            text: 'Chart.update'
+        },
+
+        subtitle: {
+            text: 'Plain'
+        },
+
+        xAxis: {
+            categories: ['正月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+        },
+
+        series: [{
+            type: 'column',
+            colorByPoint: true,
+            data: [3, 5, 7, 7, 1, 13, 5, 9, 30, 9, 13, 24],
+            showInLegend: false
+        }]
+
+    });
+
+
+    $('#plain').click(function () {
+        chart.update({
+            chart: {
+                inverted: false,
+                polar: false
+            },
+            subtitle: {
+                text: 'Plain'
+            }
+        });
+    });
+
+    $('#inverted').click(function () {
+        chart.update({
+            chart: {
+                inverted: true,
+                polar: false
+            },
+            subtitle: {
+                text: 'Inverted'
+            }
+        });
+    });
+
+    $('#polar').click(function () {
+        chart.update({
+            chart: {
+                inverted: false,
+                polar: true
+            },
+            subtitle: {
+                text: 'Polar'
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
+

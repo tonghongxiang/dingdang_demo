@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.9">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/phone_derive.css">
+	<script src="js/modernizr.js"></script>
+	<style type="text/css">
+		#container1{
+			position: fixed;
+			top: -300px;
+			height:300px;
+			width: 500px;
+			margin-left: -250px;
+			left: 50%;
+			background: rgba(0, 0, 0, 0.7);
+			-webkit-backdrop-filter: blur(10px);
+			z-index: 10;
+			border-radius: 10px;
+			text-align: center;
+			display: block;
+		}
+		.car_button{
+			height: 30px;
+			width: 70px;
+			font-weight: bold;
+			color: #ffffff;
+			background-color: rgba(255,255,255,0.23);
+			border: 0;
+			border-radius: 5px;
+			margin:20px 40px 0 40px;
+
+
+		}
+		.car_button:hover{
+			background-color: rgba(0,0,0,0.53);
+		}
+		#car_back{
+		}
+		#car_go{
+
+		}
+		.no1{
+			font-size: 1.3em;
+			color: white;
+			font-family: "Al Tarikh";
+			position: relative;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<header class="cd-header">
+		<div id="cd-logo"><img src="img/logo/logo.png" alt="Logo"></div>
+		<div id="cd-action"><a id="phone" href="pinglun_show.php" class="btn">查看评价</a></div>
+	</header>
+
+	<main class="cd-main-content">
+		<div class="cd-product-intro" align="center">
+			<h1>请选择你喜欢的颜色</h1>
+			<p>这个世界上有疯狂的人，
+				不适应工作的人，叛逆者，惹事生非的人，
+				与环境格格不入的人，看问题与别人不一样的人．
+				他们不喜欢规则，也不喜欢现状．
+				你可以赞同他们的话，也可以反对他们的话．
+				你可以赞美他们，也可以诋毁他们．
+				你惟一不能做的～就是忽视他们．</p>
+			<div id="btn_color">
+				<table align="center" style="width: 410px">
+					<tbody>
+					<tr>
+						<td><button id="btn_color1"></button></td>
+						<td><button id="btn_color2"></button></td>
+						<td><button id="btn_color3"></button></td>
+					</tr>
+					<tr>
+						<td>
+							<span>星空灰</span>
+						</td>
+						<td>
+							<span>皓雪白</span>
+						</td>
+						<td>
+							<span>天空蓝</span>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+			<div class="cd-triggers">
+				<a href="index.html" class="btn">返回主页</a>
+				<a href="#cd-product-tour" class="btn salmon" data-type="cd-tour">选择版本</a>
+			</div>
+		</div> <!-- cd-product-intro -->
+
+		<div id="cd-product-tour">
+			<ul>
+				<li class="cd-single-item cd-active">
+					<div class="cd-caption">
+						<h2>DingDangPhone X1</h2>
+						<p>屏幕: 主屏尺寸5.1英寸 主屏分辨率1920x1080像素<br>
+							CPU: 高通 骁龙810 核心数四核 1.96GHz<br>
+							GPU: 高通 Adreno510<br>
+							存储: RAM容量3GB  ROM容量16GB<br><br>
+							<sapn>售价：<h style="color: red">1999</h> 元</sapn>
+						</p>
+
+						<button class="love" name="DingDangPhoneX1">收藏</button>
+						<button class="add_car" id="DingDangPhoneX1" type="submit">加入购物车</button>
+
+					</div>
+					<div class="cd-image-container">
+						<div>
+							<div class="cd-phone-frame"></div>
+							<div class="cd-image-wrapper">
+								<img src="img/screen-1.png" data-video="video/video-1" alt="Screen Preview 1">
+							</div>
+						</div>
+					</div>
+
+				</li>
+				<li class="cd-single-item cd-not-visible cd-move-right">
+					<div class="cd-caption">
+						<h2>DingDangPhone X2</h2>
+						<p>屏幕: 主屏尺寸5.5英寸 主屏分辨率2560x1440像素<br>
+							CPU: 高通 骁龙820 核心数四核 2.15GHz<br>
+							GPU: 高通 Adreno530<br>
+							存储: RAM容量4GB ROM容量32GB<br><br>
+							<sapn>售价：<h style="color: red">2699</h> 元</sapn>
+						</p>
+						<button class="love"  name="DingDangPhoneX2">收藏</button>
+						<button class="add_car" id="DingDangPhoneX2" type="submit">加入购物车</button>
+
+					</div>
+					<div class="cd-image-container">
+						<div>
+							<div class="cd-phone-frame"></div>
+							<div class="cd-image-wrapper">
+								<img src="img/screen-2.png" data-video="video/video-2" alt="Screen Preview 2">
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="cd-single-item cd-not-visible cd-move-right">
+					<div class="cd-caption">
+						<h2>FDingDangPhone X3</h2>
+						<p>屏幕: 主屏尺寸5.9英寸 主屏分辨率2560x1440像素<br>
+							CPU: 高通 骁龙835 核心数四核 2.4GHz<br>
+							GPU: 高通 Adreno560<br>
+							存储: RAM容量6GB ROM容量128GB<br><br>
+							<sapn>售价：<h style="color: red">3499</h> 元</sapn>
+						</p>
+						<button class="love" id="phone_love3" name="DingDangPhoneX3">收藏</button>
+						<button class="add_car" id="DingDangPhoneX3" >加入购物车</button>
+					</div>
+					<div class="cd-image-container">
+						<div>
+							<div class="cd-phone-frame"></div>
+							<div class="cd-image-wrapper">
+								<img src="img/screen-3.png" data-video="video/video-3" alt="Screen Preview 3">
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div> <!-- cd-product-tour -->
+
+		<div class="cd-slider-nav">
+			<a class="cd-prev" href="#0">Previous</a>
+			<a class="cd-next" href="#0">Next</a>
+		</div> <!-- cd-slider-nav -->
+
+		<div class="cd-loader"></div> <!-- top loading bar -->
+	</main>
+	<div  id="container1">
+		<div id="container"></div>
+		<button class='car_button' id='car_back'>关闭</button ><button class='car_button' id='car_go'  onclick="window.open('car_index.html','_blank')">去结算</button>
+	</div>
+
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/phone_derive.js"></script> <!-- Resource jQuery -->
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $("#btn_color1").click(function () {
+            var x=document.getElementsByClassName("cd-phone-frame");
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.borderColor="rgba(0,0,0,1)";
+            }
+
+        });
+        $("#btn_color2").click(function () {
+            var x = document.getElementsByClassName("cd-phone-frame");
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.borderColor = "rgba(240,255,240,1)";
+            }
+
+        });
+        $("#btn_color3").click(function () {
+            var x = document.getElementsByClassName("cd-phone-frame");
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.borderColor = "rgba(87,250,255,1)";
+            }
+
+        });
+    });
+
+    $(function () {
+        $(".add_car").click(function () {
+            document.getElementById("container1").style.top="100px";
+            var phone_color=document.getElementsByClassName("cd-phone-frame")[1].style.borderColor;
+            var a=$(this).attr('id');/*获取点击事件的ID*/
+            $("#container").load("php/add_phone.php",{name1: a,name2:phone_color})/*传递参数a给后台Php文件add_car.php，最后返回数据填入id为#container的div中*/
+        });
+
+        $(".car_button").click(function () {
+            document.getElementById("container1").style.top="-300px";
+        });
+
+        $(".love").click(function (e) {
+            document.getElementById("container1").style.top="100px";
+            var l=$(e.target).attr('name');
+            $("#container").load("php/add_collect.php",{name: l})/*传递参数a给后台Php文件add_car.php，最后返回数据填入id为#container的div中*/
+
+        });
+
+        $("#car_go").click(function () {
+
+
+            $.ajax({
+                url: "php/car_index.php",
+                type: "POST",
+                data: {name5:f}
+            });
+        });
+
+        $('.container').on("click","#search_input",function (e) {/*动态绑定刷新数据事件*/
+            var c=$(e.target).attr('id');
+            $.ajax({
+                url: "add_look_num.php",
+                type: "POST",
+                data: {name3: c}
+            });
+        });
+
+        $("#phone").click(function () {
+
+            $.cookie("pro_type","Phone");
+        });
+
+
+    });
+
+   /* $('.container').on("click",".car_button",function (e) {/!*动态绑定刷新数据事件*!/
+        var f=$(e.target).attr('id');
+        alert(f);
+    });*/
+
+
+</script>
+</body>
+</html>
